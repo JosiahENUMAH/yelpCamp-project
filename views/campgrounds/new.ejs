@@ -1,0 +1,96 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="row">
+  <h1 class="text-center">New Campground</h1>
+  <div class="col-6 offset-3">
+    <form action="/campgrounds" method="post" novalidate class="validated-form">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          name="campground[title]"
+          id="title"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">
+          Field Required: Please type name of Camp
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          type="text"
+          name="campground[location]"
+          id="location"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">
+          Field Required: Please type Camp Location
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Image URL</label>
+        <input
+          type="text"
+          name="campground[image]"
+          id="image"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">
+          Field Required: Please input image url
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="price" class="form-label">Campground Price</label>
+        <div class="input-group">
+          <span class="input-group-text">$</span>
+          <input
+            type="number"
+            name="campground[price]"
+            class="form-control"
+            aria-label="Amount (to the nearest dollar)"
+            id="price"
+            placeholder="0.00"
+            min="0"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">
+            Field Required: Please select a Price
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          cols="30"
+          rows="5"
+          name="campground[description]"
+          id="description"
+          class="form-control"
+          required
+        ></textarea>
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">
+          Field Required: Please add camp description
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <button class="btn btn-lg btn-secondary">Add Campground</button>
+      </div>
+    </form>
+
+    <a href="/campgrounds">All Campgrounds</a>
+  </div>
+</div>
